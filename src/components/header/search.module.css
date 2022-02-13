@@ -1,0 +1,43 @@
+.wrapper {
+    display: flex;
+}
+.form {
+    display: grid;
+    position: relative;
+    width: 100%;
+}
+.input, .search_button, .filter_button {
+    border: none;
+    outline: none;
+}
+.input {
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 16px;
+    background: #F7F7F8;
+    padding-left: 44px;
+    caret-color: #6534FF;
+}
+.input::placeholder {
+    color: #C3C3C6;
+}
+.search_button {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    cursor: pointer;
+    background: none;
+}
+.input:focus + .search_button svg path{
+    fill: #050510;
+} 
+.filter_button {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    background: none;
+}
+.filter_button:active svg path{
+    fill: #6534FF;
+}

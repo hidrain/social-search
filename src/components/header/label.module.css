@@ -1,0 +1,8 @@
+.wrapper {
+    display: flex;
+}
+.label {
+    font-size: 24px;
+    font-weight: 700;
+    align-self: center;
+}

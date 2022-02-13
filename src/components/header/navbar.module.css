@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  overflow: auto;
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(6, max-content);
+  overflow: auto;
+  padding-top: 21px;
+  font-weight: 500;
+}
+.item a {
+  color: #97979B;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+.item a.active {
+  color: #050510;
+  font-weight: 600;
+  border-bottom: 2px solid #6534FF;
+}

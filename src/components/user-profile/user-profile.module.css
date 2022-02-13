@@ -1,0 +1,66 @@
+.avatar {
+    width: 104px;
+    filter: drop-shadow(0px 1px 5px rgba(22, 30, 52, 0.039)) drop-shadow(0px 8px 12px rgba(22, 30, 52, 0.08))
+}
+.wrapper {
+    display: grid;
+    grid-template-rows: 280px 1fr;
+}
+.wrapper_top {
+    display: grid;
+    grid-template-rows: 72px max-content 1fr;
+    background: #F7F7F8;
+    justify-items: center;
+}
+.info_wrapper {
+    align-self: center;
+}
+.user_info {
+    display: grid; 
+    grid-template-columns: 1fr max-content; 
+    gap: 4px; 
+}
+.name {
+    color: #050510;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.user_tag {
+    font-size: 17px;
+    font-weight: 400;
+    color: #97979B;
+    align-self: center;
+}
+.department {
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    color: #55555C;
+    justify-content: center;
+}
+.button {
+    display: flex;
+    justify-self: start;
+    align-self: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.wrapper_buttom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 26px 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.buttom_item {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.age {
+    justify-self: end;
+    color: #97979B;
+}

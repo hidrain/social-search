@@ -1,0 +1,29 @@
+.wrapper { 
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 35vh 1fr 1fr;
+}
+.img {
+    width: 56px;
+    align-self: end;
+}
+.main {
+    font-size: 17px;
+    font-weight: 700;
+    padding-top:8px;
+    align-self: end;
+}
+.regular {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #97979B;
+    padding-top: 12px;
+}
+.link {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6534FF;
+    text-decoration: none;
+    padding-top: 12px;
+}
