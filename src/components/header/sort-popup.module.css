@@ -21,14 +21,14 @@
 .popup_content {
     display: grid;
     position: absolute;
-    grid-template-rows: 72px 60px 60px;
-    width: 373px;
+    grid-template-rows: 62px 60px 60px;
+    width: 337px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: #fff;
-    padding: 24px 18px;
+    padding: 24px 18px 0 18px;
     border-radius: 20px;
     font-size: 16px;
 }

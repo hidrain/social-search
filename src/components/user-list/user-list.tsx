@@ -1,7 +1,7 @@
 import axios from "axios"
 import style from './user-list.module.css'
 import avatar from '../../assets/images/avatar.png'
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { Spacer } from "../../helpers/spacer"
 import { NotFound } from "../status-pages/not-found"
@@ -13,13 +13,11 @@ type Props = {}
 export const UserList: React.FC<Props> = ({ }) => {
 
     const { users,
-        setUsers,
-        searchString,
-        department
+        setUsers, searchString, department,
+        filteredBySearch, setFilteredBySearch,
     } = useContext(Context) as ContextProps
 
     const [filteredByTab, setFilteredByTab] = useState<SearchUser[]>([])
-    const [filteredBySearch, setFilteredBySearch] = useState<SearchUser[]>([]);
 
     useEffect(() => {
         console.log('SYNC USERS')
@@ -36,8 +34,10 @@ export const UserList: React.FC<Props> = ({ }) => {
 
     useEffect(() => {
         console.log('FILTER TABS')
-        department === 'all' ? setFilteredByTab(users) : setFilteredByTab(users
-            .filter(user => user.department === department))
+        if (users.length > 0) {
+            department === 'all' ? setFilteredByTab(users) : setFilteredByTab(users
+                .filter(user => user.department === department))
+        }
     }, [department, users])
 
     useEffect(() => {

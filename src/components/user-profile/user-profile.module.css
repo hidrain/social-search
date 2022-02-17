@@ -62,5 +62,6 @@
 }
 .age {
     justify-self: end;
+    padding-top: 20px;
     color: #97979B;
 }

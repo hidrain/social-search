@@ -31,13 +31,14 @@
 .input:focus + .search_button svg path{
     fill: #050510;
 } 
-.filter_button {
+.sort_button {
     position: absolute;
     top: 8px;
     right: 12px;
     cursor: pointer;
     background: none;
+    border: none;
 }
-.filter_button:active svg path{
+.sort_button:active svg path{
     fill: #6534FF;
 }

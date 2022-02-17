@@ -6,7 +6,28 @@ import style from './sort-popup.module.css'
 
 export const SortPopup = () => {
 
-    const { togglePopup, sortPopup } = useContext(Context) as ContextProps
+    const { togglePopup, sortPopup, setSortPopup,
+        filteredBySearch, setFilteredBySearch
+    } = useContext(Context) as ContextProps
+
+    const sortUsersByAbc = () => {
+        const copyData = filteredBySearch.concat()
+        const sortData = copyData.sort((a, b) => {
+            return (a.firstName > b.firstName ? 1 : -1)
+        })
+        setFilteredBySearch(sortData)
+        setSortPopup(false)
+        console.log(sortData)
+    }
+    const sortUsersByDate = () => {
+        const copyData = filteredBySearch.concat()
+        const sortData = copyData.sort((a, b) => {
+            return (a.birthday > b.birthday ? 1 : -1)
+        })
+        setFilteredBySearch(sortData)
+        setSortPopup(false)
+        console.log(sortData)
+    }
 
     return (
         <div>
@@ -23,12 +44,14 @@ export const SortPopup = () => {
                                 </button>
                             </div>
                             <div className={style.sort}>
-                                <input type="checkbox" name="abc" />
+                                <input type="radio" name="abc"
+                                    onClick={() => { sortUsersByAbc() }} />
                                 <Spacer width={14} />
                                 <label htmlFor="abc">По алфавиту</label>
                             </div>
                             <div className={style.sort}>
-                                <input type="checkbox" name="date" />
+                                <input type="radio" name="date"
+                                    onClick={() => { sortUsersByDate() }} />
                                 <Spacer width={14} />
                                 <label htmlFor="date">По дню рождения</label>
                             </div>

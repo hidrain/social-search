@@ -1,13 +1,34 @@
-import { FormEvent, useContext } from 'react'
+import { FormEvent, useContext, useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Spacer } from '../../helpers/spacer'
 import { Context, ContextProps } from '../hoc/context'
-import { FilterIcon } from '../icons/filter-icon'
+import { SortIcon } from '../icons/sort-icon'
 import { SearchIcon } from '../icons/search-icon'
 import style from './search.module.css'
+import { SearchUser } from '../../types/types'
 
 
 export const Search = () => {
     const { searchString, setSearchString, togglePopup } = useContext(Context) as ContextProps
+
+    // const [sortAbc, setSortAbc] = useState(false)
+    // const [sortUsers, setSortUsers] = useState<SearchUser[]>([])
+
+    // useEffect(() => {
+
+    // }, [sortAbc])
+
+    // const handleCheckbox = (e: any) => {
+    //     const form = e.target
+    //     const isAbc = form.sortAbc?.checked
+
+    //     const params = {}
+
+    //     //@ts-ignore
+    //     if (isAbc) params.sortAbc = true
+    //     setSearchParams(params)
+    // }
+
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -35,8 +56,8 @@ export const Search = () => {
 
                 <button
                     onClick={togglePopup}
-                    className={style.filter_button}>
-                    <FilterIcon />
+                    className={style.sort_button}>
+                    <SortIcon />
                 </button>
             </form>
             <Spacer width={16} />
