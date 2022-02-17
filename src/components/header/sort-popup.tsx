@@ -42,13 +42,13 @@ export const SortPopup = () => {
                                 </button>
                             </div>
                             <div className={style.sort}>
-                                <input type="radio" name="abc"
+                                <input type="radio" name="abc" id="abc"
                                     onClick={() => { sortUsersByAbc() }} />
                                 <Spacer width={14} />
                                 <label htmlFor="abc">По алфавиту</label>
                             </div>
                             <div className={style.sort}>
-                                <input type="radio" name="date"
+                                <input type="radio" name="date" id="date"
                                     onClick={() => { sortUsersByDate() }} />
                                 <Spacer width={14} />
                                 <label htmlFor="date">По дню рождения</label>

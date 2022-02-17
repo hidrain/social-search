@@ -36,6 +36,8 @@ export const UserProfile = () => {
     }
     const birthDay = dob.getDate() + ' ' + getMonthDay(dob) + ' ' + dob.getFullYear()
 
+    const phoneNumber = 'tel:' + user?.phone;
+
     return (
         <div>
             {user && <div className={style.wrapper}>
@@ -74,7 +76,7 @@ export const UserProfile = () => {
                         <div className={style.buttom_item}>
                             <PhoneIcon />
                             <Spacer width={12} />
-                            {user.phone}
+                            <a href={phoneNumber}>{user.phone}</a>
                         </div>
                     </div>
                     <div className={style.age}>{age} {declOfNum(age, ['год', 'года', 'лет'])}</div>

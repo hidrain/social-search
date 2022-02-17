@@ -11,25 +11,6 @@ import { SearchUser } from '../../types/types'
 export const Search = () => {
     const { searchString, setSearchString, togglePopup } = useContext(Context) as ContextProps
 
-    // const [sortAbc, setSortAbc] = useState(false)
-    // const [sortUsers, setSortUsers] = useState<SearchUser[]>([])
-
-    // useEffect(() => {
-
-    // }, [sortAbc])
-
-    // const handleCheckbox = (e: any) => {
-    //     const form = e.target
-    //     const isAbc = form.sortAbc?.checked
-
-    //     const params = {}
-
-    //     //@ts-ignore
-    //     if (isAbc) params.sortAbc = true
-    //     setSearchParams(params)
-    // }
-
-
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
     }

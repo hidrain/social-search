@@ -46,3 +46,6 @@
 .sort {
     display: inline-flex;
 }
+input, label {
+    cursor: pointer;
+}
