@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import avatar from '../../assets/images/avatar.png'
+import { declOfNum } from "../../helpers/declOfNum"
 import { Spacer } from "../../helpers/spacer"
 import { Context, ContextProps } from "../hoc/context"
 import { ArrowIcon } from "../icons/arrow-icon"
@@ -18,6 +19,17 @@ export const UserProfile = () => {
     const goBack = () => navigate(-1)
 
     const user = users.find(u => u.id === id)
+
+    const now = new Date()
+    let today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+    const dob = new Date(user!.birthday)
+    const dobnow = new Date(today.getFullYear(), dob.getMonth(), dob.getDate())
+    let age
+
+    age = today.getFullYear() - dob.getFullYear()
+    if (today < dobnow) {
+        age = age - 1
+    }
 
     return (
         <div>
@@ -60,7 +72,7 @@ export const UserProfile = () => {
                             {user.phone}
                         </div>
                     </div>
-                    <div className={style.age}>{user.birthday}</div>
+                    <div className={style.age}>{age} {declOfNum(age, ['год', 'года', 'лет'])}</div>
                 </div>
 
             </div>}
