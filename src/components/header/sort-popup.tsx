@@ -17,7 +17,6 @@ export const SortPopup = () => {
         })
         setFilteredBySearch(sortData)
         setSortPopup(false)
-        console.log(sortData)
     }
     const sortUsersByDate = () => {
         const copyData = filteredBySearch.concat()
@@ -26,7 +25,6 @@ export const SortPopup = () => {
         })
         setFilteredBySearch(sortData)
         setSortPopup(false)
-        console.log(sortData)
     }
 
     return (
