@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { UserList } from './components/user-list/user-list';
 import { Error } from './components/status-pages/error';
 import { UserProfile } from './components/user-profile/user-profile';
@@ -19,7 +19,10 @@ const App = () => {
           <Route path='managers' element={<UserList />}></Route>
           <Route path='ios' element={<UserList />}></Route>
           <Route path='android' element={<UserList />}></Route>
-          <Route path='/*' element={<Error />}></Route>
+          {/* <Route path='*' element={<Error />}></Route> */}
+
+          <Route path='/404' element={<Error />} />
+          <Route path='*' element={<Navigate replace to='/404' />} />
         </Route>
       </Routes>
     </Provider>
