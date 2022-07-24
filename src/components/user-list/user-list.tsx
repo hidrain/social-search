@@ -1,7 +1,7 @@
 import axios from "axios"
 import style from './user-list.module.css'
 import avatar from '../../assets/images/avatar.png'
-import { Link, useSearchParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { Spacer } from "../../helpers/spacer"
 import { NotFound } from "../status-pages/not-found"
@@ -20,7 +20,6 @@ export const UserList: React.FC<Props> = ({ }) => {
     const [filteredByTab, setFilteredByTab] = useState<SearchUser[]>([])
 
     useEffect(() => {
-        console.log('SYNC USERS')
         axios
             .get<SearchResult>(`https://stoplight.io/mocks/kode-education/trainee-test/25143926
       /users`)
@@ -33,7 +32,6 @@ export const UserList: React.FC<Props> = ({ }) => {
     }, [])
 
     useEffect(() => {
-        console.log('FILTER TABS')
         if (users.length > 0) {
             department === 'all' ? setFilteredByTab(users) : setFilteredByTab(users
                 .filter(user => user.department === department))
@@ -41,7 +39,6 @@ export const UserList: React.FC<Props> = ({ }) => {
     }, [department, users])
 
     useEffect(() => {
-        console.log('FILTER USERS')
         setFilteredBySearch(
             filteredByTab.filter((user) =>
                 user.firstName.toLowerCase().includes(searchString.toLowerCase())
@@ -77,7 +74,8 @@ export const UserList: React.FC<Props> = ({ }) => {
                             </Link>)
                     })}
                 </ul>
-                : <NotFound />}
+                : <NotFound />
+            }
         </div >
     )
 }

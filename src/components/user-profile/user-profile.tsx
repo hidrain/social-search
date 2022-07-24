@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom"
 import avatar from '../../assets/images/avatar.png'
 import { declOfNum } from "../../helpers/declOfNum"
 import { Spacer } from "../../helpers/spacer"
-import { SearchUser } from "../../types/types"
 import { Context, ContextProps } from "../hoc/context"
 import { ArrowIcon } from "../icons/arrow-icon"
 import { PhoneIcon } from "../icons/phone-icon"
@@ -20,6 +19,7 @@ export const UserProfile = () => {
 
     const user = users.find(u => u.id === id)
 
+    //GET AGE
     const now = new Date()
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
     const dob = new Date(user!.birthday)
@@ -29,6 +29,7 @@ export const UserProfile = () => {
         age = age - 1
     }
 
+    //GET FORMAT BIRTHDAY
     const getMonthDay = (dob: any) => {
         let months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
             'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
@@ -36,6 +37,7 @@ export const UserProfile = () => {
     }
     const birthDay = dob.getDate() + ' ' + getMonthDay(dob) + ' ' + dob.getFullYear()
 
+    //GET PHONE NUMBER
     const phoneNumber = 'tel:' + user?.phone;
 
     return (

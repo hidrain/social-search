@@ -1,12 +1,9 @@
-import { FormEvent, useContext, useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { FormEvent, useContext } from 'react'
 import { Spacer } from '../../helpers/spacer'
 import { Context, ContextProps } from '../hoc/context'
 import { SortIcon } from '../icons/sort-icon'
 import { SearchIcon } from '../icons/search-icon'
 import style from './search.module.css'
-import { SearchUser } from '../../types/types'
-
 
 export const Search = () => {
     const { searchString, setSearchString, togglePopup } = useContext(Context) as ContextProps
