@@ -19,7 +19,7 @@ const App = () => {
           <Route path='managers' element={<UserList />}></Route>
           <Route path='ios' element={<UserList />}></Route>
           <Route path='android' element={<UserList />}></Route>
-          <Route path='*' element={<Error />}></Route>
+          <Route path='/*' element={<Error />}></Route>
         </Route>
       </Routes>
     </Provider>
