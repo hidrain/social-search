@@ -49,3 +49,6 @@
 input, label {
     cursor: pointer;
 }
+label {
+    align-self: center;
+}
