@@ -21,8 +21,7 @@ export const UserList: React.FC<Props> = ({ }) => {
 
     useEffect(() => {
         axios
-            .get<SearchResult>(`https://stoplight.io/mocks/kode-education/trainee-test/25143926
-      /users`)
+            .get<SearchResult>(`https://stoplight.io/mocks/kode-frontend-team/koder-stoplight/86566464/users?__example=all`)
             .then(res => {
                 setUsers(res.data.items)
             })
